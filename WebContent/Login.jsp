@@ -1,46 +1,72 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page import="Negocio.Usuario" %>
+<!DOCTYPE html> 
 <html lang="pt-br">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastros</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+	<title>Cadastre-se - Esciba Backup</title>
+	<meta charset="utf-8">
+	<c:import url="_CODIGOS/head.jsp"/>
+	<!-- AQUI FICA O CABE�ARIO DA PAG�NA -->
+	<c:import url="_CODIGOS/menu.jsp"/>
 </head>
-
-<body>
-    <!-- Barra superior com os menus de navegacao -->
-	<c:import url="Menu.jsp"/>
-    <!-- Container Principal -->
-    <div id="main" class="container">
-       <h3 class="page-header">Login</h3>
-       <!-- Formulario de Login -->
-        <form action="controller.do" method="post">
-				<div class="row col-md-12">
-				<div class="form-group">
-					<div class="input-group col-md-4">
-					   <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div> 
-					   <input type="email" name="username" id="username" class="form-control" maxlength="60" placeholder="E-mail" required/>
+<body style="background-image:url(_IMAGENS/cartorio.jpg);">
+							<!-- FAZER LIGON -->
+						<div>
+							<h2 id="logo" class="link logo alura al-center">
+								<hr>
+								<span id="azul">Fazer</span>
+									<span id="preto">Login</span>
+										<script type="text/javascript">
+										setTimeout("document.getElementById('azul').className = 'azul'; document.getElementById('branco').className = 'branco'", 2000);
+										</script>
+							</h2>
+						</div>
+							<!-- DIVs FORMULÁRIO -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4">
+						<div class="login-panel panel panel-default">
+							<div class="panel-heading">
+								<span class=""><center>Entre com o usuário</center></span>
+									<script type="text/javascript">
+										setTimeout("document.getElementById('azul').className = 'azul'; document.getElementById('branco').className = 'branco'", 2000);
+										</script>
+						</div>
+							<div class="panel-body">
+								
+								<!--Formulário --->
+								<form class="form-horizontal" action="controller.do" method="POST">
+													<fieldset>
+							<div class="form-group">
+											<!--Email--->
+											<label for="email" class="link">Nome</label><input class="form-control" placeholder="E-mail" name="username" type="text" autofocus>
+							</div>
+							<div class="form-group">
+											<!--Senha--->
+											<label for="password" class="link"> Senha</label><input class="form-control" required placeholder="Senha" name="password" type="password" value="">
+							</div>
+							<div class="checkbox">
+								<input name="remember" type="checkbox" value="Remember Me"><a>Lembrar </a>
+											</div>
+											<!--Logar-se --->
+							<div class="controls">
+							<button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
+							</div>
+											<center>
+											<a href="cadastro.jsp">Cadastre-se</a><hr >
+											<a href="esquecisenha.jsp">Esqueci minha senha</a><hr>
+											</center>
+											<!--Fim Formulário --->
+											</fieldset>
+								</form>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group col-md-4">
-					   <div class="input-group-addon"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></div> 
-					   <input type="password" name="passwd" id="passwd" class="form-control" placeholder="Senha" required/>
-					</div>
-				</div>
-				</div>
-				<div class="row col-md-12">
-					<button type="submit" class="btn btn-primary" name="command" value="FazerLogin"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ok</button>
-				</div>
-			</form>    
+			 	</div>
 			</div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
+									<!-- FIM DIVs FORMULÁRIO -->
 
+
+ </body>
 </html>

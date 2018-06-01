@@ -1,12 +1,16 @@
-package service;
-
-import model.Usuario;
-import dao.UsuarioDAO;
+package Service;
+import Negocio.Usuario;
+import DAO.UsuarioDAO;
 
 public class UsuarioService {
+	UsuarioDAO dao;
 	
-	public boolean validar(Usuario usuario){
-		UsuarioDAO dao = new UsuarioDAO();
-		return dao.validar(usuario);
+	public UsuarioService() {
+		dao = new UsuarioDAO();
 	}
+	
+	public boolean validarLogin(Usuario usuario) {
+		return dao.validarLogin(usuario);
+	}
+	
 }
